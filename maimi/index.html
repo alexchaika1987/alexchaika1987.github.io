@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/slick.css">
+	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<!-- Не забывать поключать jquery поверх
+	остальных подсоединений javascript иначе
+	подключения к нужным фалам не произойдет -->
+	<script src="js/control.js" type="text/javascript"></script>
+	<script src="js/slick.min.js" type="text/javascript"></script>
+</head>
+<body>
+	<header class="main_flex flex__jcontent_center flex__align-content_space-between">
+	<div id="top_header" class="wrap ">
+		<div id="phone">
+			8 880 500 50 50
+		</div>
+		<div id="logo">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 115 76">
+  <image id="dark_back" width="115" height="76" xlink:href="data:img/png;base64,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"/>
+</svg>
+
+		</div>
+		<div id="call">
+		call to order	
+		</div>
+	</div>	
+	<div id="bottom_header">
+		<nav class="wrap main_flex__nowrap flex__align-items_center flex__jcontent_between">
+		
+			<li><a href="#top_header">Home</a></li>
+			<li><a href="#about">About Us</a></li>
+			<li><a href="#gallery">gallery</a></li>
+			<li><a href="#consultation">consultation</a></li>
+			<li><a href="#testimonials">testimonials</a></li>	
+			<li><a href="#contacts">Contacts</a></li>
+		</nav>
+	</div>
+	</header>
+
+	<div id="about">
+		<div class="wrap main_flex__nowrap flex__jcontent_between flex__align-items_start">
+			<div id="title_about">
+				<h2>Miami <span id="title_ubuntu_medium">best </span><br>
+					Realry<span class="title_color">— </span><br>
+                <span class="title_color">this</span></h2>
+                
+			</div>
+			<div id="text_about">
+				<p><strong>Over 50 years experience in love.</strong></p><p>
+Mazel and VA Tsukkerman in his "Analysis of musical works." Pointillism, which originated in the music of the early twentieth century, microforms, found a distant historical.</p>
+        <ul>
+        	<li>1.  The market leader in real estate since 2003</li>
+        	<li>2.  Awards Real Estate Company, 2010, 2011, 2013</li>
+        	<li>3.  More than 200 satisfied customers premium segment</li>
+        	<li>4.  We focus only on new buildings and high-level
+     doskanalno know this area better than other specialists.</li>
+        	<li>5.  Working directly with developers - so have more
+     useful information about the profitable deals</li>
+        </ul>
+        <p><strong>We will never late!</strong></p>
+        <p><strong>Guaranteed secure trasaction - 100%</strong></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="gallery">
+		<div class="title_gallery">
+			<h2>Gallery</h2>
+			<div class="dec wrap main_flex__nowrap flex__align-content_center flex__align-items_center flex__jcontent_between">
+				<div class="line"></div>
+				<div class="dec_svg">
+				
+
+<svg version="1.1" id="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 81 62.24" style="enable-background:new 0 0 81 62.24;" xml:space="preserve">
+<path d="M39.89,56.84l0.87,0l14.47-30.98L79.56,42.3L81,42.35L68.6,0l-8.4,1.26l7.28,23.59L51.25,14.46l-2.97,6.71l0.01,0
+	l-7.87,17.25L33.78,23.2l-7.09,4.56L39.89,56.84z"/>
+<path d="M1.45,42.3L40.5,16.15l5.84,3.76l2.89-6.74l-8.23-5.27H40.5H40L13.52,24.85L20.8,1.26L12.4,0L0,42.35L1.45,42.3z"/>
+</svg>
+
+
+				</div>
+				<div class="line"></div>
+			</div>			
+		</div>
+		<div class="wrap" id="gallery_box">
+				<div class="gallery_line main_flex__nowrap flex__jcontent_between">
+				<div class="box_img_gallery">
+					<img src="images/1.jpg" alt="">	
+				</div>
+				<div class="box_img_gallery">
+					<img src="images/2.jpg" alt="">	
+				</div>
+				</div>
+				<div class="name_gallery">
+					Marina Palms / <span class="title_color">North Niami Beach, FL 33162</span>
+				</div>
+				<div class="gallery_line main_flex__nowrap flex__jcontent_between">
+				<div class="box_img_gallery">
+					<img src="images/3.jpg" alt="">	
+				</div>
+				<div class="box_img_gallery">
+					<img src="images/5.jpg" alt="">	
+				</div>
+				</div>
+				<div class="name_gallery">
+					Edition Residens / <span class="title_color">Miami Beach, FL 33139</span>
+					
+				</div>
+				<div class="gallery_line main_flex__nowrap flex__jcontent_between">
+				<div class="box_img_gallery">
+					<img src="images/6.jpg" alt="">	
+				</div>
+				<div class="box_img_gallery">
+					<img src="images/4.jpg" alt="">	
+				</div>
+				</div>
+				<div class="name_gallery">
+					Faena House / <span class="title_color">Miami Beach, FL 33140</span>
+				</div>
+				<div class="main_flex__nowrap flex__jcontent_center">
+				<button class="btn blue_btn" id="view_all_gallery" type="button">view all				
+				</button>
+				</div>
+
+			</div>
+	</div>
+		<div id="consultation">
+			<div class="title_gallery">
+			<h2>consultation</h2>
+			<div class="dec main_flex__nowrap flex__align-content_center flex__align-items_center flex__jcontent_between">
+				<div class="line"></div>
+				<div class="dec_svg">
+				
+<svg version="1.1" id="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 81 62.24" style="enable-background:new 0 0 81 62.24;" xml:space="preserve">
+<path d="M39.89,56.84l0.87,0l14.47-30.98L79.56,42.3L81,42.35L68.6,0l-8.4,1.26l7.28,23.59L51.25,14.46l-2.97,6.71l0.01,0
+	l-7.87,17.25L33.78,23.2l-7.09,4.56L39.89,56.84z"/>
+<path d="M1.45,42.3L40.5,16.15l5.84,3.76l2.89-6.74l-8.23-5.27H40.5H40L13.52,24.85L20.8,1.26L12.4,0L0,42.35L1.45,42.3z"/>
+</svg>
+
+
+				</div>
+				<div class="line"></div>
+			</div>
+		</div>
+		<div id="block_info" class="wrap main_flex__nowrap flex__jcontent_between flex__align-items_start">
+		<div id="text_consultation">
+			<h2>How long have<br> you do yourself a gift?</h2>
+			<p>The procedural change mezzo forte starts izoritichesky pickup at these moments stop LA NAzei an VA Tsukkerman in his "Analysis originated in the music works". Pointillism? which orginated in the misic of the early twentieth country, microforms, found a distant historical</p>
+		</div>
+		<div id="form_consultation"> 
+			<form action="" name="consultation"
+			id="form_sort">
+				<input type="text" placeholder="name" cla>
+				<input type="text" placeholder="phone">
+				<input type="text" placeholder="email">
+				<button type="submit" class="blue_btn">consultation</button>
+			</form>
+		<!-- <div id="form_sort">
+		
+			<button class="btn_static btn_consult" type="button">name</button>
+			
+			<button class="btn_static btn_consult" type="button">mail</button>
+			
+			<button class="btn_static btn_consult" type="button">phone</button>
+			
+			<button class="blue_static_btn btn_consult" type="button">consultation</button>
+			
+			</div> -->
+		</div>
+	</div>
+	</div>
+
+		<div id="testimonials">
+			<div class="title_gallery">
+			<h2>testimonials</h2>
+			<div class="dec main_flex__nowrap flex__align-content_center flex__align-items_center flex__jcontent_between">
+				<div class="line"></div>
+				<div class="dec_svg">
+				
+<svg version="1.1" id="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 81 62.24" style="enable-background:new 0 0 81 62.24;" xml:space="preserve">
+<path d="M39.89,56.84l0.87,0l14.47-30.98L79.56,42.3L81,42.35L68.6,0l-8.4,1.26l7.28,23.59L51.25,14.46l-2.97,6.71l0.01,0
+	l-7.87,17.25L33.78,23.2l-7.09,4.56L39.89,56.84z"/>
+<path d="M1.45,42.3L40.5,16.15l5.84,3.76l2.89-6.74l-8.23-5.27H40.5H40L13.52,24.85L20.8,1.26L12.4,0L0,42.35L1.45,42.3z"/>
+</svg>
+
+
+				</div>
+				<div class="line"></div>
+			</div>
+		</div>
+	<div id="testimonials_block_info"> 
+	<div class="wrap main_flex__nowrap flex__align-items_start flex__jcontent_around" id="slide">
+		<div class="info_of_personal">
+			<div class="personal_img">
+			<img src="images/person1.png" alt="">
+			</div>
+		<div class="personal_title">
+			<h2>Stev Jobs</h2>
+			<h3>Founder Lucoil</h3>
+			</div>
+		<div class="personal_text">
+			<p>Nice work, Certificates National Association of Realtors (USA).</p>
+			</div>
+		</div>
+		<div class="info_of_personal">
+			<div class="personal_img">
+			<img src="images/person2.png" alt="">
+			</div>
+		<div class="personal_title">
+			<h2>Alisher Usmanov</h2>
+			<h3>Ural Steel</h3>
+			</div>
+		<div class="personal_text">
+			<p>My soul is illuminated by an unearthly joy, as these beautiful spring morning, which I enjoy with all my heart. I'm all alone and blissfully happy in the local edge. as if created for the likes of me.</p>
+			</div>
+		</div>
+		<div class="info_of_personal">
+			<div class="personal_img">
+			<img src="images/person3.png" alt="">
+			</div>
+		<div class="personal_title">
+			<h2>Alex Kojevatov</h2>
+			<h3>Founder Lucoil</h3>
+			</div>
+		<div class="personal_text">
+			<p>When my lovely valley of steam rises and half-day sun is above an impermeable. thicket</p>
+			</div>
+		</div>
+		<div class="info_of_personal">
+			<div class="personal_img">
+			<img src="images/person1.png" alt="">
+			</div>
+		<div class="personal_title">
+			<h2>Stev Jobs</h2>
+			<h3>Founder Lucoil</h3>
+			</div>
+		<div class="personal_text">
+			<p>Nice work, Certificates National Association of Realtors (USA).</p>
+			</div>
+		</div>
+		<div class="info_of_personal">
+			<div class="personal_img">
+			<img src="images/person2.png" alt="">
+			</div>
+		<div class="personal_title">
+			<h2>Alisher Usmanov</h2>
+			<h3>Ural Steel</h3>
+			</div>
+		<div class="personal_text">
+			<p>My soul is illuminated by an unearthly joy, as these beautiful spring morning, which I enjoy with all my heart. I'm all alone and blissfully happy in the local edge. as if created for the likes of me.</p>
+			</div>
+		</div>
+		<div class="info_of_personal">
+			<div class="personal_img">
+			<img src="images/person3.png" alt="">
+			</div>
+		<div class="personal_title">
+			<h2>Alex Kojevatov</h2>
+			<h3>Founder Lucoil</h3>
+			</div>
+		<div class="personal_text">
+			<p>When my lovely valley of steam rises and half-day sun is above an impermeable. thicket</p>
+			</div>
+		</div>
+	</div>
+
+</div>
+		<div id="contacts">
+			<div class="title_gallery">
+			<h2>contacts</h2>
+			<div class="dec main_flex__nowrap flex__align-content_center flex__align-items_center flex__jcontent_between">
+				<div class="line"></div>
+				<div class="dec_svg">
+				
+<svg version="1.1" id="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 81 62.24" style="enable-background:new 0 0 81 62.24;" xml:space="preserve">
+<path d="M39.89,56.84l0.87,0l14.47-30.98L79.56,42.3L81,42.35L68.6,0l-8.4,1.26l7.28,23.59L51.25,14.46l-2.97,6.71l0.01,0
+	l-7.87,17.25L33.78,23.2l-7.09,4.56L39.89,56.84z"/>
+<path d="M1.45,42.3L40.5,16.15l5.84,3.76l2.89-6.74l-8.23-5.27H40.5H40L13.52,24.85L20.8,1.26L12.4,0L0,42.35L1.45,42.3z"/>
+</svg>
+
+
+				</div>
+				<div class="line"></div>
+			</div>
+		</div> 
+		 <div id="contact_info">
+		 	<div class="wrap main_flex__nowrap flex__align-items_start flex__jcontent_between">
+		 		<div id="contact_block">
+		 		<p>Hello@miami.com</p>
+		 		<p id="phone_info">8 800 678 78 78<br>
+                   8 800 700 98 98</p>
+                 <p id="adress_info">400 first ave. n.<br>
+                    suite 700<br>
+                    Minneapolis, MN 55401</p>	
+		 		</div>
+		 	<div id="form_contacts">
+		 		<form action="" name="contacts"
+			id="form_sort">
+				<input type="text" placeholder="name">
+				<input type="text" placeholder="phone">
+				<textarea type="text" placeholder="MESSAGE"></textarea>
+				<button type="submit" class="blue_btn">write to us</button>
+			</form>
+			</div>
+		 	</div>
+		 </div>	
+	</div> 
+	<footer class="main_flex flex__jcontent_center flex__align-content_space-between"> 
+		
+			<div id="footer_logo">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="115" height="76" viewBox="0 0 115 76">
+  <image id="dark_back" width="115" height="76" xlink:href="data:img/png;base64,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"/>
+</svg>
+
+		</div>
+		     <div id="footer_text">
+			&copy; maimi beach
+		</div>
+		
+		</footer>	
+
+		<div id="modal_box">
+			<div id="close_modal">
+				<svg version="1.1" id="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 31.112 31.112" style="enable-background:new 0 0 31.112 31.112;" xml:space="preserve">
+<polygon points="31.112,1.414 29.698,0 15.556,14.142 1.414,0 0,1.414 14.142,15.556 0,29.698 1.414,31.112 15.556,16.97 
+	29.698,31.112 31.112,29.698 16.97,15.556 "/>
+</svg>
+			</div>
+			<div id="content_modal">
+				<div id="form_order"> 
+			<form action="" name="order"
+			id="form_sort_order">
+				<input type="text" placeholder="name">
+				<input type="text" placeholder="phone">
+				<input type="text" placeholder="email">
+				<button type="submit" class="blue_btn">order</button>
+			</form>
+			</div>
+		</div>	
+	</div>
+
+		<div id="black_fill"></div>
+			<!-- black_fill фон с темной подложкой -->
+	
+</body>
+</html>
