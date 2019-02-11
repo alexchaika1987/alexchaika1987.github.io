@@ -109,11 +109,11 @@ $(function(){
 
     $('#menu_box').hide();
 
-	$('#imgMenu').on("click", function(){
+	$('#menu').onclick(function(){
 		$('#menu_box').show();
 	});
 
-	$('#imgMenu').on("click", function(){
+	$('#menu').onclick(function(){
 		$('#menu_box').hide();
 	});
 	
