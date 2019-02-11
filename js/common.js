@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 
-	$("#form_sort_order").submit(function(){
+	$("#orderButton").submit(function(){
 		$.ajax({
 			type: "POST",
 			url: "mail.php",
