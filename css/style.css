@@ -543,11 +543,13 @@ only screen and (min-device-width: 768px) and
 		font-size: 3.5vw;
 	}
 	#menu_box{
-	display: none;
-	position: absolute;
+	display: block;
+	position: fixed;
+	width: 20px;
+	color: #323232;
 	top: 20vh;
 	left: 10vw;
-	z-index: 77;
+	z-index: 78;
 }
 #content_box{
 	width: 100%;
@@ -561,9 +563,13 @@ only screen and (min-device-width: 768px) and
 	position: absolute;
 	top: 4vh;
 	left: 7vw;
-	
 	cursor: pointer;
-	z-index: 78;
+	z-index: 77;
+
+}
+#menu{
+	width: 100%;
+	height: auto;
 }
 
 

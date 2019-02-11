@@ -102,4 +102,20 @@ $(function(){
 	/*Данные строчки кода позволяет показывать и прятать
 	нашу форму order вместе с фоном*/
 
+	$('#orderButton').on("click", function(){
+		window.location = "mail.php";
+	});
+
+
+    $('#menu_box').hide();
+
+	$('#imgMenu').on("click", function(){
+		$('#menu_box').show();
+	});
+
+	$('#imgMenu').on("click", function(){
+		$('#menu_box').hide();
+	});
+	
+
 });
