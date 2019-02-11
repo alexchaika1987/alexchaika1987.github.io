@@ -11,6 +11,7 @@
 	остальных подсоединений javascript иначе
 	подключения к нужным фалам не произойдет -->
 	<script src="js/control.js" type="text/javascript"></script>
+	
 	<script src="js/slick.min.js" type="text/javascript"></script>
 </head>
 <body>
@@ -338,18 +339,20 @@ Mazel and VA Tsukkerman in his "Analysis of musical works." Pointillism, which o
 			</div>
 			<div id="content_modal">
 				<div id="form_order"> 
-			<form action="" name="order"
+			<form action="" name="order" method="post" 
 			id="form_sort_order">
-				<input type="text" placeholder="name">
-				<input type="text" placeholder="phone">
-				<input type="text" placeholder="email">
+				<input type="text" name="name" placeholder="name" required>
+				<input type="text" name="phone" placeholder="phone" required>
+				<input type="text" name="email" placeholder="email" required>
 				<button type="submit" class="blue_btn">order</button>
 			</form>
+			<script src="js/common.js" type="text/javascript"></script>
 			</div>
 		</div>	
 	</div>
+	
 
-		<div id="black_fill"></div>
+		<!-- <div id="black_fill"></div> -->
 			<!-- black_fill фон с темной подложкой -->
 	
 </body>

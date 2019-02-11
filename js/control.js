@@ -27,19 +27,42 @@ $(function(){
 	и фиксации при дальнейшем продвижении вниз
 	лендинга */
 
-	if ( window.innerWidth < 1024) {
-	$('#slide').slick({
+	
+		/*var screen = window.matchMedia("(max-width:1024px)");
+		
+	
+		if(screen.matches <1024){
+		$('#slide').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 5000,
-		});
-	}else {
-		$('#slide').slick({
+		autoplaySpeed: 7000,
+
+	});
+		}else{
+			$('#slide').slick({
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		autoplay: true,
 		autoplaySpeed: 5000,
+		});
+		}
+	}*/
+ 
+	if ( window.innerWidth < 1024) {
+	$('#slide').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: false,
+		
+		});
+	}
+	else {
+		$('#slide').slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 5000
 		});
 	}
 	/*Тут мы подключаем плагин slick - который необходим
@@ -66,15 +89,15 @@ $(function(){
 
 	/*Работа с кнопкой view all gallery которая добавляет
 	блок картинок внизу*/
-
-	$('#modal_box, #black_fill').hide();
+	
+	$('#modal_box').hide();
 
 	$('#call').click(function(){
-		$('#modal_box, #black_fill').show();
+		$('#modal_box').show();
 	});
 
 	$('#close_modal, #black_fill').click(function(){
-		$('#modal_box, #black_fill').hide();
+		$('#modal_box').hide();
 	});
 	/*Данные строчки кода позволяет показывать и прятать
 	нашу форму order вместе с фоном*/

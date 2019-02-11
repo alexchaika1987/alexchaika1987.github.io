@@ -474,6 +474,7 @@ footer{
 	opacity: 0.8;
 }
 #modal_box{
+	display: none;
 	position: fixed;
 	top: 20vh;
 	width: 33vw;
@@ -496,12 +497,15 @@ footer{
 	cursor: pointer;
 
 }
+/* only screen and (max-width: 320px),
+only screen and (min-device-width: 768px) and 
+(max-device-width: 1024px) */
 @media only screen and (min-device-width: 320px) and 
-(max-device-width: 480px),
-@media only screen and (max-width: 320px),
-@media only screen and (min-device-width: 768px) and 
-(max-device-width: 1024px){
+(max-device-width: 1024px)
+{
+	
 	body, .btn{
+		
 		font-size: 2.26vmax;
 		line-height: 2.9vmax;
 		/*Увеличим шрифт на мобильном*/
@@ -570,6 +574,7 @@ footer{
 	#consultation .wrap div{
 		width: 100%;
 	}
+	
 
 	#text_consultation h2 {
     margin-top: -12vh;
@@ -606,6 +611,8 @@ footer{
     height: 30.84vh;
     margin-top: 7vh;
     text-align: center;
+}
+}
 
 
 
