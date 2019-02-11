@@ -478,7 +478,7 @@ footer{
 	position: fixed;
 	top: 20vh;
 	width: 33vw;
-	right: 10vh;
+	right: 10vw;
 	z-index: 51;
 }
 #content_modal{
@@ -497,6 +497,7 @@ footer{
 	cursor: pointer;
 
 }
+
 /* only screen and (max-width: 320px),
 only screen and (min-device-width: 768px) and 
 (max-device-width: 1024px) */
@@ -541,7 +542,31 @@ only screen and (min-device-width: 768px) and
 	.name_gallery{
 		font-size: 3.5vw;
 	}
+	#menu_box{
+	display: none;
+	position: absolute;
+	top: 20vh;
+	left: 10vw;
+	z-index: 77;
+}
+#content_box{
+	width: 100%;
+	background-color: #fff;
+	padding: 3%;
+}
+#menu{
+	width: 7vw;
+	height: 7vw;
+	fill: #fff;
+	position: absolute;
+	top: 4vh;
+	left: 7vw;
 	
+	cursor: pointer;
+	z-index: 78;
+}
+
+
 	
 
 	#bottom_header{
