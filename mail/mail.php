@@ -1,7 +1,7 @@
 <?php
 
 $recepient = "alexchaika1987@gmail.com";
-$siteName = "https://bestproperty.ml";
+$siteName = "bestproperty.ml";
 
 $name = trim($_POST["name"]);
 $phone = trim($_POST["phone"]);
