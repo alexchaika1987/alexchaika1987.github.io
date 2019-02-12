@@ -8,7 +8,7 @@ $(document).ready(function(){
 	}
      		$.ajax({
 			type: "POST",
-			url: "mail.php",
+			url: "mail/mail.php",
 			data: $(this).serialize()
 		}).done(function(){
 			alert("Спасибо за заявку! Скоро мы с вами свяжемся");
