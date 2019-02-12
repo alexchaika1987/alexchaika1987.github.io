@@ -60,6 +60,7 @@ body{
 	font-size: 1.26vmax;
 	line-height: 1.9vmax;
 	color: #323232;
+	overflow: auto;
 
 }
 .wrap{
@@ -112,9 +113,14 @@ header{
 }
 
 #logo{
-	width: 15vh;	
+	width: 15vh;
+
+	
 }
-#call{
+
+		
+		
+	#call{
 	text-transform: uppercase;
 	text-decoration: underline;
 	cursor: pointer;
@@ -127,7 +133,11 @@ nav a{
 	text-decoration: none;
 	
 }
+#bottom header{
+	width: 100%;
+}
 #bottom_header a{
+
 	text-transform: uppercase;
 	color: #fff;
 
@@ -223,25 +233,10 @@ nav a{
 	color: #323232;
 
 }
-
-
 .box_img_gallery:odd{
 	margin-right: auto;
 }
 
-/* .box_img_gallery:nth-child(1){
-	margin-right: 1.58vw;
-}
-.box_img_gallery:nth-child(3){
-	margin-right: 1.58vw;
-}
-.box_img_gallery:nth-child(5){
-	margin-right: 1.58vw;
-} */
-/* .box_img_gallery{
-	width: auto;
-	height: 20.55vmax;
-} */
 .box_img_gallery img{
 	height: 20.55vw;
 	width: auto;
@@ -286,10 +281,7 @@ nav a{
 	margin-bottom: 3.16vh;
 
 }
-/* #text_consultation p{
-	font-size: 1.26vmax;
-	line-height: 1.897vmax;
-} */
+
 #form_consultation, #form_contacts{
 	/*height: 33.98vh;*/
 	width: 30vw;
@@ -403,7 +395,7 @@ form button{
 margin-top: 5.49vh;
 }
 
-.form_sort_order{
+.form{
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -452,10 +444,10 @@ footer{
 	background-color: #fff;
 	color: #323232;
 	z-index: 10;
-	transition: 0.25s ease-in-out;
+	transition: 0.3s ease-in-out;
 }
 .fixedNav:hover{
-	opacity: 1;
+	opacity: 0.8;
 }
 #bottom_header.fixedNav a{
 	color: #323232;
@@ -470,7 +462,7 @@ footer{
 	top:0;
 	left:0;
 	z-index: 50;
-	background-color: #4C4848;
+	background-color: #323232;
 	opacity: 0.8;
 }
 #modal_box{
@@ -498,6 +490,7 @@ footer{
 
 }
 
+
 /* only screen and (max-width: 320px),
 only screen and (min-device-width: 768px) and 
 (max-device-width: 1024px) */
@@ -523,7 +516,8 @@ only screen and (min-device-width: 768px) and
 		flex-flow: column !important;
 	}
 	#logo{
-		width: 27vh;
+		width: 23vh;
+		transition: opacity 2s ease-in-out;
 	}
 	.dec_svg{
 		width: 7vw;
@@ -543,36 +537,78 @@ only screen and (min-device-width: 768px) and
 		font-size: 3.5vw;
 	}
 	#menu_box{
-	display: block;
-	position: fixed;
-	width: 20px;
+	display: none;
+	position: absolute;
+	width: 33vw;
 	color: #323232;
-	top: 20vh;
-	left: 10vw;
+	top: 6vh;
+	left: -0.5vw;
 	z-index: 78;
+
 }
+
 #content_box{
 	width: 100%;
-	background-color: #fff;
+	
 	padding: 3%;
+	z-index: 78;
+}
+#content_box a{
+	color: #fff;
+	text-transform: uppercase;
+}
+#contet_box a:hover{
+	color: red;
+}
+
+#content_box li{
+	margin-bottom: 2.2vh;
+	
 }
 #menu{
 	width: 7vw;
-	height: 7vw;
-	fill: #fff;
 	position: absolute;
-	top: 4vh;
+	top: 5vh;
 	left: 7vw;
 	cursor: pointer;
 	z-index: 77;
 
 }
-#menu{
-	width: 100%;
+#menu img{
+	cursor:pointer;
+	width: 7vw;
 	height: auto;
+	/*Создаем анимация вращения для меню*/
+	display: inline-block;
+	transition: all 0.5s ease-in-out 0s;
+  
 }
 
+#modal_box{
+	display: none;
+	position: fixed;
+	top: 30vh;
+	width: 70vw;
+	/*right: 15vw;*/
+	left: calc(50% - 35.5vw);
+	z-index: 51;
+}
+#content_modal{
+	width: 100%;
+	background-color: #fff;
+	padding: 3%;
 
+}
+#close_modal{
+	width: 2vw;
+	height: 2vw;
+	fill: #fff;
+	position: absolute;
+	top: -4vw;
+	right: -4vw;
+	cursor: pointer;
+
+}
 	
 
 	#bottom_header{

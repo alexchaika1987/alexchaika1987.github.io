@@ -1,10 +1,14 @@
 
 $(function(){
+
 	'use strict';
 	$('a[href^="#"]').click(function(){
 		let target = $(this).attr('href');
 		$('html, body').animate({
-			scrollTop:$(target).offset().top
+			scrollTop:$(target).offset().top - 53 
+			// top поставили отрицательное значение так как при скролинге к каждому
+			// заголовку, заголовок застревал по середине. Все из за того,
+			// что в css мы поднимали top bg контейнера на значение -2.64vh;
 		}
 		);
 	});
@@ -22,32 +26,7 @@ $(function(){
 				}
 
 	});
-	/*Фикцация нашего меню при скроллинге а именно
-	выпадание нашей панели  навигации при прокрутке
-	и фиксации при дальнейшем продвижении вниз
-	лендинга */
-
 	
-		/*var screen = window.matchMedia("(max-width:1024px)");
-		
-	
-		if(screen.matches <1024){
-		$('#slide').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		autoplay: true,
-		autoplaySpeed: 7000,
-
-	});
-		}else{
-			$('#slide').slick({
-		slidesToShow: 3,
-		slidesToScroll: 1,
-		autoplay: true,
-		autoplaySpeed: 500
-		});
-		}
-	}*/
  
 	if ( window.innerWidth < 1024) {
 	$('#slide').slick({
@@ -90,14 +69,17 @@ $(function(){
 	/*Работа с кнопкой view all gallery которая добавляет
 	блок картинок внизу*/
 	
-	$('#modal_box').hide();
+	$('#modal_box, #black_fill').hide();
 
 	$('#call').click(function(){
-		$('#modal_box').show();
+		$('#modal_box, #black_fill').show();
 	});
 
-	$('#close_modal, #black_fill').click(function(){
-		$('#modal_box').hide();
+	$('#close_modal').click(function(){
+		$('#modal_box, #black_fill').hide();
+	});
+	$('#black_fill').click(function(){
+		$('#modal_box, #black_fill').hide();
 	});
 	/*Данные строчки кода позволяет показывать и прятать
 	нашу форму order вместе с фоном*/
@@ -107,15 +89,7 @@ $(function(){
 	});*/
 
 
-    $('#menu_box').hide();
-
-	$('#menu').onclick(function(){
-		$('#menu_box').show();
-	});
-
-	$('#menu').onclick(function(){
-		$('#menu_box').hide();
-	});
+  
 	
 
 });

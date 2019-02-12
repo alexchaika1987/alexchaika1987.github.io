@@ -11,3 +11,4 @@ $pagetitle = "Новая заявка с сайта \"$sitename\"";
 mail($recepient, $pagetitle, $message, "Content-type: text/plan; 
 	charsert=\"utf-8\"\n From: $recepient");
 
+?>

@@ -1,8 +1,12 @@
 
 $(document).ready(function(){
+	$('#form').submit(function(){
+	if(document.form.name.value == '' || document.form.phone.value == ''){
+		valid = false;
+		return valid;
 
-	$("#form_sort_order").submit(function(){
-		$.ajax({
+	}
+     		$.ajax({
 			type: "POST",
 			url: "mail.php",
 			data: $(this).serialize()
@@ -12,3 +16,4 @@ $(document).ready(function(){
 		return false; 
 	});
 });
+
